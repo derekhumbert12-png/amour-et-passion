@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amour et Passion ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- BARRE DE CONNEXION -->
+<section id="connexion" class="login-page">
+    <div class="login-brand">
+        <h1>Amour et Passion ❤️</h1>
+        <p>Rencontres, amitié et partage.</p>
+    </div>
+
+    <div class="login-card">
+        <form id="formConnexion">
+            <input type="email" id="emailConnexion"
+                   placeholder="Adresse e-mail" required>
+
+            <input type="password" id="motDePasseConnexion"
+                   placeholder="Mot de passe" required>
+
+            <button type="submit">Se connecter</button>
+        </form>
+
+        <hr>
+
+        <form id="formInscription">
+            <h3>Créer un compte</h3>
+            <input type="email" id="emailInscription"
+                   placeholder="Votre e-mail" required>
+
+            <input type="password" id="motDePasseInscription"
+                   placeholder="Créer un mot de passe" required>
+
+            <button type="submit" class="green-button">
+                Créer un compte
+            </button>
+        </form>
+
+        <p id="messageConnexion"></p>
+    </div>
+</section>
+
+
+<!-- APPLICATION -->
+<div id="application" style="display:none;">
+
+    <!-- BARRE BLEUE -->
+    <header class="topbar">
+        <div class="brand">
+            <h2>Amour et Passion ❤️</h2>
+        </div>
+
+        <div class="top-search">
+            <input type="search" id="rechercheMembres"
+                   placeholder="Rechercher des membres...">
+        </div>
+
+        <nav class="top-actions">
+            <button onclick="afficherSection('accueil')">Accueil</button>
+            <button onclick="afficherSection('messages')">💬</button>
+            <button onclick="afficherSection('notifications')">🔔</button>
+            <button onclick="afficherSection('mon-profil')">👤</button>
+            <button onclick="deconnexion()">Quitter</button>
+        </nav>
+    </header>
+
+
+    <!-- TROIS COLONNES -->
+    <div class="main-layout">
+
+        <!-- MENU GAUCHE -->
+        <aside class="left-sidebar">
+            <div class="menu-profile"
+                 onclick="afficherSection('mon-profil')">
+                <div class="menu-icon">👤</div>
+                <strong>Mon profil</strong>
+            </div>
+
+            <div class="menu-item"
+                 onclick="afficherSection('accueil')">
+                🏠 Accueil
+            </div>
+
+            <div class="menu-item"
+                 onclick="afficherSection('amis')">
+                👥 Amis
+            </div>
+
+            <div class="menu-item"
+                 onclick="afficherSection('messages')">
+                💬 Messages
+            </div>
+
+            <div class="menu-item"
+                 onclick="afficherSection('notifications')">
+                🔔 Notifications
+            </div>
+
+            <div class="menu-item"
+                 onclick="afficherSection('videos')">
+                🎬 Vidéos
+            </div>
+
+            <div class="menu-item"
+                 onclick="afficherSection('photos')">
+                🖼️ Photos
+            </div>
+
+            <div class="menu-item"
+                 onclick="afficherSection('mon-profil')">
+                ⚙️ Paramètres du profil
+            </div>
+        </aside>
+
+
+        <!-- FIL CENTRAL -->
+        <main class="center-content">
+
+            <section id="accueil" class="page-section">
+
+                <!-- STORIES -->
+                <div class="content-card">
+                    <h3>Stories</h3>
+
+                    <div class="stories-container" id="stories">
+                        <div class="story-tile create-story"
+                             onclick="document.getElementById('photoStory').click()">
+                            <span>＋</span>
+                            <p>Créer une story</p>
+                        </div>
+                    </div>
+
+                    <form id="formStory">
+                        <input type="file" id="photoStory"
+                               accept="image/*,video/*">
+
+                        <input type="text" id="texteStory"
+                               placeholder="Ajouter un texte à votre story">
+
+                        <input type="text" id="musiqueStory"
+                               placeholder="Musique (facultatif)">
+
+                        <input type="text" id="mentionStory"
+                               placeholder="Mentionner quelqu'un">
+
+                        <input type="text" id="stickersStory"
+                               placeholder="Sticker">
+
+                        <select id="filtreStory">
+                            <option value="">Choisir un filtre</option>
+                            <option value="normal">Normal</option>
+                            <option value="noir">Noir et blanc</option>
+                            <option value="sepia">Sépia</option>
+                        </select>
+
+                        <div id="apercuStoryZone"></div>
+                        <button type="submit">Partager ma story</button>
+                    </form>
+                </div>
+
+
+                <!-- CREATION PUBLICATION -->
+                <div class="content-card">
+                    <h3>Créer une publication</h3>
+
+                    <form id="formPublication">
+                        <textarea id="publication"
+                                  placeholder="Quoi de neuf ?"
+                                  rows="4"></textarea>
+
+                        <label for="photoPublication">
+                            📷 Ajouter une photo ou vidéo
+                        </label>
+
+                        <input type="file" id="photoPublication"
+                               accept="image/*,video/*">
+
+                        <button type="submit">
+                            Publier
+                        </button>
+                    </form>
+                </div>
+
+
+                <!-- ACTUALITES -->
+                <div id="filActualite">
+                    <h3>Fil d'actualité</h3>
+                </div>
+
+            </section>
+
+
+            <!-- AMIS -->
+            <section id="amis" class="page-section">
+                <div class="content-card">
+                    <h2>👥 Mes amis</h2>
+
+                    <h3>Demandes d'amis</h3>
+                    <div id="listeDemandesAmis"></div>
+
+                    <h3>Suggestions</h3>
+                    <div id="suggestionsAmis"></div>
+
+                    <h3>Liste de mes amis</h3>
+                    <div id="listeAmis"></div>
+                </div>
+            </section>
+
+
+            <!-- MESSAGES -->
+            <section id="messages" class="page-section">
+                <div class="content-card">
+                    <h2>💬 Messagerie</h2>
+
+                    <div id="listeConversations"></div>
+
+                    <div id="chatBox"></div>
+
+                    <form id="formMessage">
+                        <input type="text" id="texteMessage"
+                               placeholder="Écrire un message...">
+
+                        <input type="file" id="photoMessage"
+                               accept="image/*,video/*">
+
+                        <button type="submit">Envoyer</button>
+                    </form>
+                </div>
+            </section>
+
+
+            <!-- NOTIFICATIONS -->
+            <section id="notifications" class="page-section">
+                <div class="content-card">
+                    <h2>🔔 Notifications</h2>
+                    <div id="listeNotifications"></div>
+                </div>
+            </section>
+
+
+            <!-- VIDEOS -->
+            <section id="videos" class="page-section">
+                <div class="content-card">
+                    <h2>🎬 Vidéos</h2>
+                    <div id="listeVideos"></div>
+                </div>
+            </section>
+
+
+            <!-- PHOTOS -->
+            <section id="photos" class="page-section">
+                <div class="content-card">
+                    <h2>🖼️ Galerie photos</h2>
+                    <div id="galeriePhotos"></div>
+                </div>
+            </section>
+
+
+            <!-- MON PROFIL -->
+            <section id="mon-profil" class="page-section">
+                <div class="content-card">
+                    <h2>👤 Mon profil</h2>
+
+                    <div id="zoneMonProfil"></div>
+
+                    <form id="formProfil">
+                        <input type="text" id="prenomProfil"
+                               placeholder="Votre prénom">
+
+                        <input type="number" id="ageProfil"
+                               placeholder="Votre âge" min="18">
+
+                        <input type="text" id="villeProfil"
+                               placeholder="Votre ville">
+
+                        <select id="orientationProfil">
+                            <option value="">Orientation</option>
+                            <option value="Gay">Gay</option>
+                            <option value="Lesbienne">Lesbienne</option>
+                            <option value="Bisexuel(le)">Bisexuel(le)</option>
+                            <option value="Transgenre">Transgenre</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+
+                        <input type="text" id="rechercheProfil"
+                               placeholder="Je recherche...">
+
+                        <textarea id="descriptionProfil"
+                                  placeholder="Parlez de vous"></textarea>
+
+                        <input type="file" id="photoProfil"
+                               accept="image/*">
+
+                        <label>
+                            <input type="checkbox" id="profilPrive">
+                            Profil privé
+                        </label>
+
+                        <button type="submit">Enregistrer mon profil</button>
+                    </form>
+
+                    <p id="messageProfil"></p>
+                </div>
+            </section>
+
+
+            <!-- PARAMETRES -->
+            <section id="parametres" class="page-section">
+                <div class="content-card">
+                    <h2>⚙️ Paramètres</h2>
+                    <button onclick="deconnexion()">Se déconnecter</button>
+                </div>
+            </section>
+
+        </main>
+
+
+        <!-- COLONNE DROITE -->
+        <aside class="right-sidebar">
+
+            <div class="content-card">
+                <h3>Contacts</h3>
+                <div id="contacts">
+                    <p>Vos amis apparaîtront ici.</p>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3>Suggestions d'amis</h3>
+                <div id="suggestionsAmisDroite"></div>
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <!-- BARRE MOBILE -->
+    <nav class="mobile-nav">
+        <button onclick="afficherSection('accueil')">🏠</button>
+        <button onclick="afficherSection('amis')">👥</button>
+        <button onclick="afficherSection('messages')">💬</button>
+        <button onclick="afficherSection('notifications')">🔔</button>
+        <button onclick="afficherSection('mon-profil')">👤</button>
+    </nav>
+
+
+    <!-- LECTEUR STORY -->
+    <div id="visionneuseStory" class="story-viewer"
+         style="display:none;">
+
+        <button id="fermerStory" onclick="fermerStory()">✕</button>
+
+        <div id="contenuStory"></div>
+    </div>
+
+</div>
+
+
+<!-- SCRIPT FIREBASE -->
+<script type="module" src="script.js"></script>
+
+</body>
+</html>

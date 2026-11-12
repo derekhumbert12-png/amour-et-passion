@@ -1,0 +1,686 @@
+
+/* =========================================
+   AMOUR ET PASSION ❤️
+   DESIGN FACEBOOK CLASSIQUE
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bleu: #1877f2;
+    --bleu-fonce: #0866ff;
+    --fond: #f0f2f5;
+    --blanc: #ffffff;
+    --texte: #050505;
+    --gris: #65676b;
+    --bordure: #dddfe2;
+    --ombre: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fond);
+    color: var(--texte);
+    font-size: 15px;
+}
+
+/* CONNEXION */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+.login-brand {
+    max-width: 400px;
+}
+
+.login-brand h1 {
+    color: var(--bleu);
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.login-brand p {
+    font-size: 24px;
+}
+
+.login-card {
+    width: 380px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+}
+
+.login-card input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 12px;
+    border: 1px solid var(--bordure);
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.login-card button {
+    width: 100%;
+    padding: 14px;
+    background: var(--bleu);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-card .green-button {
+    background: #42b72a;
+    margin-top: 10px;
+}
+
+.login-card h3 {
+    margin: 15px 0;
+}
+
+.login-card hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid var(--bordure);
+}
+
+#messageConnexion {
+    margin-top: 12px;
+    color: var(--bleu);
+    text-align: center;
+}
+
+/* BARRE SUPERIEURE */
+
+.topbar {
+    height: 62px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 22px;
+    box-shadow: var(--ombre);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    gap: 15px;
+}
+
+.brand h2 {
+    color: var(--bleu);
+    font-size: 25px;
+}
+
+.top-search input {
+    width: 270px;
+    padding: 12px 18px;
+    background: var(--fond);
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    font-size: 14px;
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.top-actions button {
+    border: none;
+    background: var(--fond);
+    border-radius: 8px;
+    padding: 10px 13px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.top-actions button:hover {
+    background: #e4e6eb;
+}
+
+/* STRUCTURE TROIS COLONNES */
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 260px minmax(350px, 680px) 280px;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1500px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* MENU GAUCHE */
+
+.left-sidebar {
+    position: sticky;
+    top: 82px;
+    height: fit-content;
+}
+
+.menu-profile,
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px;
+    border-radius: 9px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.menu-profile:hover,
+.menu-item:hover {
+    background: #e4e6eb;
+}
+
+.menu-icon {
+    width: 35px;
+    height: 35px;
+    background: #dbeafe;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* COLONNE CENTRALE */
+
+.center-content {
+    width: 100%;
+    min-width: 0;
+}
+
+.page-section {
+    display: none;
+}
+
+#accueil {
+    display: block;
+}
+
+/* CARTES */
+
+.content-card {
+    background: white;
+    padding: 18px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    box-shadow: var(--ombre);
+}
+
+.content-card h2,
+.content-card h3 {
+    margin-bottom: 15px;
+}
+
+/* STORIES */
+
+.stories-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 5px 0 12px;
+}
+
+.story-tile {
+    min-width: 115px;
+    width: 115px;
+    height: 180px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #1877f2, #a855f7);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+}
+
+.story-tile:hover {
+    opacity: 0.9;
+}
+
+.create-story {
+    background: #e4e6eb;
+    color: #050505;
+}
+
+.create-story span {
+    background: var(--bleu);
+    color: white;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+#formStory {
+    border-top: 1px solid var(--bordure);
+    padding-top: 12px;
+    margin-top: 10px;
+}
+
+#formStory input,
+#formStory select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid var(--bordure);
+    border-radius: 7px;
+}
+
+/* CREATION PUBLICATION */
+
+#formPublication {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#formPublication textarea {
+    width: 100%;
+    resize: vertical;
+    min-height: 85px;
+    background: var(--fond);
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 16px;
+    outline: none;
+}
+
+#formPublication label {
+    padding: 12px;
+    border-top: 1px solid var(--bordure);
+    cursor: pointer;
+    color: #45bd62;
+    font-weight: bold;
+}
+
+input[type="file"] {
+    max-width: 100%;
+}
+
+#formPublication button,
+#formStory button,
+#formProfil button,
+#formMessage button {
+    background: var(--bleu);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* PUBLICATIONS */
+
+#filActualite > h3 {
+    margin: 20px 5px;
+}
+
+.post-media {
+    display: block;
+    width: 100%;
+    max-height: 550px;
+    object-fit: contain;
+    margin-top: 12px;
+    border-radius: 8px;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+    border-top: 1px solid var(--bordure);
+    border-bottom: 1px solid var(--bordure);
+    margin-top: 15px;
+    padding: 8px 0;
+}
+
+.post-actions button {
+    flex: 1;
+    border: none;
+    background: white;
+    color: var(--gris);
+    padding: 12px 5px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.post-actions button:hover {
+    background: var(--fond);
+    color: var(--bleu);
+}
+
+#filActualite .content-card > h3 {
+    margin-bottom: 10px;
+}
+
+/* COMMENTAIRES */
+
+.comment-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.comment-form input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    background: var(--fond);
+    border-radius: 20px;
+    padding: 12px;
+}
+
+.comment-form button {
+    border: none;
+    background: var(--bleu);
+    color: white;
+    border-radius: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+#commentaires p {
+    padding: 8px;
+    background: var(--fond);
+    border-radius: 10px;
+    margin: 6px 0;
+}
+
+/* COLONNE DROITE */
+
+.right-sidebar {
+    position: sticky;
+    top: 82px;
+    height: fit-content;
+}
+
+.right-sidebar .content-card {
+    padding: 15px;
+}
+
+/* PROFIL */
+
+#zoneMonProfil {
+    margin-bottom: 20px;
+}
+
+#zoneMonProfil img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 10px 0;
+}
+
+#formProfil {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#formProfil input:not([type="checkbox"]),
+#formProfil select,
+#formProfil textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--bordure);
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+#formProfil label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* MESSAGES */
+
+#chatBox {
+    min-height: 250px;
+    background: var(--fond);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+#formMessage {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#formMessage input[type="text"] {
+    padding: 13px;
+    border: 1px solid var(--bordure);
+    border-radius: 20px;
+}
+
+/* NOTIFICATIONS ET AMIS */
+
+#listeAmis p,
+#listeDemandesAmis p,
+#suggestionsAmis p,
+#listeNotifications p,
+#listeConversations p {
+    padding: 12px;
+    border-bottom: 1px solid var(--bordure);
+}
+
+/* GALERIE */
+
+#galeriePhotos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+#galeriePhotos img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+/* STORY EN GRAND */
+
+.story-viewer {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    padding: 20px;
+}
+
+#fermerStory {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+#contenuStory {
+    text-align: center;
+}
+
+/* NAVIGATION MOBILE */
+
+.mobile-nav {
+    display: none;
+}
+
+/* BOUTONS */
+
+button {
+    transition: 0.2s;
+}
+
+button:hover {
+    filter: brightness(0.95);
+}
+
+/* RESPONSIVE TABLETTE */
+
+@media (max-width: 1100px) {
+    .main-layout {
+        grid-template-columns: 210px minmax(300px, 1fr);
+    }
+
+    .right-sidebar {
+        display: none;
+    }
+}
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width: 700px) {
+
+    .topbar {
+        height: auto;
+        min-height: 60px;
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+
+    .brand h2 {
+        font-size: 20px;
+    }
+
+    .top-search {
+        order: 3;
+        width: 100%;
+    }
+
+    .top-search input {
+        width: 100%;
+    }
+
+    .top-actions {
+        gap: 4px;
+    }
+
+    .top-actions button {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .main-layout {
+        display: block;
+        margin: 10px auto;
+        padding: 0 8px;
+    }
+
+    .left-sidebar,
+    .right-sidebar {
+        display: none;
+    }
+
+    .content-card {
+        border-radius: 8px;
+        padding: 13px;
+    }
+
+    .stories-container {
+        gap: 7px;
+    }
+
+    .story-tile {
+        min-width: 100px;
+        width: 100px;
+        height: 155px;
+    }
+
+    .post-actions button {
+        font-size: 12px;
+        padding: 10px 2px;
+    }
+
+    .mobile-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 58px;
+        background: white;
+        box-shadow: 0 -2px 8px rgba(0,0,0,0.12);
+        justify-content: space-around;
+        align-items: center;
+        z-index: 200;
+    }
+
+    .mobile-nav button {
+        border: none;
+        background: white;
+        font-size: 23px;
+        cursor: pointer;
+    }
+
+    body {
+        padding-bottom: 65px;
+    }
+
+    .login-page {
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .login-brand {
+        text-align: center;
+    }
+
+    .login-brand h1 {
+        font-size: 34px;
+    }
+
+    .login-brand p {
+        font-size: 18px;
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 380px;
+    }
+}
